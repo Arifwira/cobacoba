@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="print-online.css">
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <div class="logo">
+        <p>SEMUACETAK</p>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Products</a>
+                <ul>
+                    <li><a href="print-online.html">Print Online</a></li> <br>
+                    <li><a href="sewa-print.html">Sewa Print</a></li> <br>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a>
+            </li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="#">Account</a>
+                <ul>
+                    <li><a href="login.html">Login</a></li> <br>
+                    <li><a href="signup.html">Register</a></li> <br>
+                    <li><a href="account-setting.html">Setting</a></li> <br>
+                    <li><a href="login.html">Sign Out</a></li> <br>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="login-box">
+            <h2>Print Online</h2>
+            <img src="3255254.png" width="600" height="400"></img>
+            <div class="login-child">
+                <div class="loginbro">             
+                    <label for="name">Jumlah cetak &nbsp; : </label>
+                    <input type="number" placeholder="Jumlah cetak">
+                    <br><br>
+                    <label for="name">Halaman &nbsp; :</label>
+                    <input type="number" placeholder="Awal" size="5"><b>&nbsp;  -  &nbsp;</b><input type="number" placeholder="Akhir" size="5">
+                    <br>
+                    <br>
+                    <a> Upload File yang ingin anda cetak </a><br>
+                    <input type="file" id="real-file" hidden="hidden">
+                    <button type="button" id="custom-button">PILIH FILE</button>
+                    <span id="custom-text">BELUM MEMILIH FILE</span>
+                    <br>
+                      
+                    
+                    <script type="text/javascript">
+                    const realFileBtn = document.getElementById('real-file');
+                    const customBtn = document.getElementById('custom-button');
+                    const customTxt = document.getElementById('custom-text');
+                    customBtn.addEventListener("click",function(){
+                        realFileBtn.click();
+                    });
+                    realFileBtn.addEventListener("change",function(){
+                        if (realFileBtn.value){
+                            customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+                        } else{
+                            customTxt.innerHTML = "Belum memilih file";
+                        }
+                    });
+                    </script>
+                    
+                </div>
+                <div class="perkiraan">
+                    <label for="name">Masukan Alamat disini</label><br>
+                    <input type="text" placeholder="Alamat"><br>   
+                    <label for="name">Perkiraan Waktu</label><br>
+                    <input type="datetime-local" placeholder="00/00/00">
+                </div>
+            </div>
+            <p><button><a href="metode-pembayaran.html" style="color: #341F63;"> Pembayaran</a></button><br>
+            Mengalami kesulitan?<a href="bantuan.html" style="color: yellow;"> Bantuan.</a></p>
+            <div class="garis">.</div>
+            <div class="ketentuan">
+                <ul>
+                    <li>Ketentuan : 
+                        <ul>
+                            <li>biaya cetak per halaman:
+                                <ul>
+                                    <li>Hitam putih = 100 Rupiah.</li>
+                                    <li>Berwarna = 200 Rupiah.</li>
+                                </ul>
+                                <li>Apabila keterlambatan lebih dari 30 menit dari estimasi,<br> biaya akan dikembalikan ke pelanggan.
+                                </li>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
